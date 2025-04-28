@@ -5,6 +5,8 @@ import br.com.eder.screenmatch.modelo.Filme;
 import br.com.eder.screenmatch.modelo.Serie;
 import br.com.eder.screenmatch.modelo.Titulo;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
 
@@ -66,6 +68,15 @@ public class Principal {
         episodio.setSerie(serie);
         episodio.setTotalDeVisualizacoes(300);
         filtro.filtra(episodio);
+
+
+        //listas
+        ArrayList<Filme>listaDeFilmes = new ArrayList();
+        listaDeFilmes.add(filme);
+        listaDeFilmes.add(filme1);
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        System.out.println("Primeiro filme: " + listaDeFilmes.get(0).getNome());
+        System.out.println(listaDeFilmes);
 
     }
 }
