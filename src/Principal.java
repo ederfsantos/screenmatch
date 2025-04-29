@@ -10,16 +10,16 @@ import java.util.ArrayList;
 public class Principal {
     public static void main(String[] args) {
 
-        Filme filme = new Filme();
-        filme.setNome("O poderoso chefão");
-        filme.setAnoDeLancamento(2022);
+        Filme filme = new Filme("O poderoso chefão",2022);
+       // filme.setNome("O poderoso chefão");
+       // filme.setAnoDeLancamento(2022);
         filme.setDuracaoEmMinutos(258);
         filme.setIncluidoNoPlano(true);
         filme.setTotalDeAvaliacoes(10);
         filme.setDiretor("eder");
-        Filme filme1 = new Filme();
-        filme1.setNome("Tombstone");
-        filme1.setAnoDeLancamento(2025);
+        Filme filme1 = new Filme("Tombstone",2025);
+        //filme1.setNome();
+        //filme1.setAnoDeLancamento(2025);
         filme1.setDuracaoEmMinutos(100);
         filme1.setIncluidoNoPlano(true);
         filme1.setTotalDeAvaliacoes(7);
@@ -33,9 +33,9 @@ public class Principal {
         System.out.println(filme1.getTotalDeAvaliacoes());
         System.out.println(filme1);
 
-        Serie serie = new Serie();
-        serie.setNome("ER");
-        serie.setAnoDeLancamento(1996);
+        Serie serie = new Serie("ER",1996);
+       // serie.setNome();
+      //  serie.setAnoDeLancamento(1996);
         serie.setEpisodiosPorTemporada(20);
         serie.setMinutosPorEpisodio(60);
         serie.setTemporadas(8);
@@ -51,13 +51,13 @@ public class Principal {
         System.out.println(calculadora.getTempoTotal());
 
 //DownCast
-        System.out.println("exemplo de downCast");
-        Titulo t = new Filme();
-        if (t instanceof Filme) {
-            ((Filme) t).setDiretor("JOAO");
-            System.out.println("O diretor do filme é : " + ((Filme) t).getDiretor());
-            System.out.println("Fim do exemplo de downCast");
-        }
+//        System.out.println("exemplo de downCast");
+//        Titulo t = new Filme();
+//        if (t instanceof Filme) {
+//            ((Filme) t).setDiretor("JOAO");
+//            System.out.println("O diretor do filme é : " + ((Filme) t).getDiretor());
+//            System.out.println("Fim do exemplo de downCast");
+//        }
 //fim DownCast
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(filme1);
