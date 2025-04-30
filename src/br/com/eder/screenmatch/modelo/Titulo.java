@@ -1,6 +1,6 @@
 package br.com.eder.screenmatch.modelo;
 
-public abstract class Titulo {
+public  class Titulo  implements Comparable<Titulo>{
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
@@ -79,6 +79,17 @@ public abstract class Titulo {
     public void exibeFichaTecnica() {
         System.out.println("Nome do filme: " + nome);
         System.out.println("Ano de lançamento: " + anoDeLancamento);
+    }
+
+
+    public void avalia(double nota){
+        this.somaDasAvaliacoes = nota;
+        this.totalDeAvaliacoes+=(int)somaDasAvaliacoes;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }
 

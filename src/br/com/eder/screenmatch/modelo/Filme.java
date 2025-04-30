@@ -28,5 +28,9 @@ public int pegaMedia(){
     public int getClassificacao() {
         return (int) pegaMedia() /2;
     }
+
+    public void avalia(double nota){
+        super.avalia(nota);
+    }
 }
 
