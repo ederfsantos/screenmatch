@@ -32,5 +32,10 @@ public int pegaMedia(){
     public void avalia(double nota){
         super.avalia(nota);
     }
+
+    @Override
+    public String toString() {
+        return String.format("Filme: %s\nAno de lançamento: %d",this.getNome(),this.getAnoDeLancamento());
+    }
 }
 

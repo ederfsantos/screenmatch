@@ -6,6 +6,7 @@ import br.com.eder.screenmatch.modelo.Titulo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -43,6 +44,22 @@ public class PrincipalComListas {
         System.out.println("Lista de titulos ordenados");
         Collections.sort(lista);
         System.out.println(lista);
+
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano");
+        System.out.println(lista);
+
+/*
+        ArrayList<Integer> numeros = new ArrayList<Integer>();
+        numeros.add(23);
+        numeros.add(9);
+        numeros.add(100);
+        numeros.add(27);
+        System.out.println(numeros);
+        Collections.sort(numeros);
+        System.out.println(numeros);
+*/
+
 
     }
 }

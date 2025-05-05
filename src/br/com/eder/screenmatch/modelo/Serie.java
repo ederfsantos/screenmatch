@@ -46,12 +46,11 @@ public class Serie  extends Titulo{
 
     @Override
     public String toString() {
-        return "Serie{" +
-                "temporadas=" + temporadas +
-                ", ativa=" + ativa +
-                ", episodiosPorTemporada=" + episodiosPorTemporada +
-                ", minutosPorEpisodio=" + minutosPorEpisodio +
-                '}';
+//       return String.format("%s\nTemporadas: %d\nEpisodios: %d\nMinutos por episodio: %d\nAtiva: %s",
+//               super.toString(),this.getTemporadas(),this.getEpisodiosPorTemporada(),
+//               this.getMinutosPorEpisodio(),String.valueOf(isAtiva()));
+
+        return String.format("Serie: %s\nAno de lançamento: %d",this.getNome(),this.getAnoDeLancamento());
     }
     @Override
     public int getDuracaoEmMinutos(){

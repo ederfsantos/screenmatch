@@ -61,17 +61,17 @@ public  class Titulo  implements Comparable<Titulo>{
         this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
-    @Override
-    public String toString() {
-        return "Filme{" +
-                "nome='" + nome + '\'' +
-                ", anoDeLancamento=" + anoDeLancamento +
-                ", incluidoNoPlano=" + incluidoNoPlano +
-                ", somaDasAvaliacoes=" + somaDasAvaliacoes +
-                ", totalDeAvaliacoes=" + totalDeAvaliacoes +
-                ", duracaoEmMinutos=" + duracaoEmMinutos +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Filme{" +
+//                "nome='" + nome + '\'' +
+//                ", anoDeLancamento=" + anoDeLancamento +
+//                ", incluidoNoPlano=" + incluidoNoPlano +
+//                ", somaDasAvaliacoes=" + somaDasAvaliacoes +
+//                ", totalDeAvaliacoes=" + totalDeAvaliacoes +
+//                ", duracaoEmMinutos=" + duracaoEmMinutos +
+//                '}';
+//    }
 
     /**
      * Metodo exibe a ficha tecnica do objeto.
