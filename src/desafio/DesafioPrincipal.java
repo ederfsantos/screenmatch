@@ -1,13 +1,11 @@
 package desafio;
 
-import java.util.ArrayList;
+
 import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 
 public class DesafioPrincipal {
     public static void main(String[] args) {
-        int opc;
 
         Scanner ler = new Scanner(System.in);
         System.out.println("Aplicação de compras");
