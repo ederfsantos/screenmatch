@@ -1,7 +1,11 @@
 package br.com.eder.screenmatch.modelo;
 
-public  class Titulo  implements Comparable<Titulo>{
+import com.google.gson.annotations.SerializedName;
+
+public class Titulo implements Comparable<Titulo> {
+    @SerializedName("Title")
     private String nome;
+    @SerializedName("Year")
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -11,6 +15,13 @@ public  class Titulo  implements Comparable<Titulo>{
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+        this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());//ou parseInt
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0,3));
+
     }
 
     public int getTotalDeAvaliacoes() {
@@ -61,17 +72,11 @@ public  class Titulo  implements Comparable<Titulo>{
         this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Filme{" +
-//                "nome='" + nome + '\'' +
-//                ", anoDeLancamento=" + anoDeLancamento +
-//                ", incluidoNoPlano=" + incluidoNoPlano +
-//                ", somaDasAvaliacoes=" + somaDasAvaliacoes +
-//                ", totalDeAvaliacoes=" + totalDeAvaliacoes +
-//                ", duracaoEmMinutos=" + duracaoEmMinutos +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return String.format("Nome: %s\nAno de Lançamento: %d\nDuração: %d",this.getNome(),
+                this.getAnoDeLancamento(),this.getDuracaoEmMinutos());
+    }
 
     /**
      * Metodo exibe a ficha tecnica do objeto.
@@ -82,9 +87,9 @@ public  class Titulo  implements Comparable<Titulo>{
     }
 
 
-    public void avalia(double nota){
+    public void avalia(double nota) {
         this.somaDasAvaliacoes = nota;
-        this.totalDeAvaliacoes+=(int)somaDasAvaliacoes;
+        this.totalDeAvaliacoes += (int) somaDasAvaliacoes;
     }
 
     @Override

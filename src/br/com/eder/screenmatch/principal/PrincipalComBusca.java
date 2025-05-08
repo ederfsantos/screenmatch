@@ -1,5 +1,11 @@
 package br.com.eder.screenmatch.principal;
 
+import br.com.eder.screenmatch.modelo.Titulo;
+import br.com.eder.screenmatch.modelo.TituloOmdb;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -23,10 +29,21 @@ public class PrincipalComBusca {
                 .build();
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
+        // System.out.println(response.body());
+        String json = response.body();
+        System.out.println(json);
 //        client.sendAsync(request, BodyHandlers.ofString())
 //                .thenApply(HttpResponse::body)
 //                .thenAccept(System.out::println)
 //                .join();
+
+        //Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+        //Titulo meuTitulo = gson.fromJson(json,Titulo.class);
+        TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);//record
+        System.out.println(meuTituloOmdb);
+        Titulo meuTitulo = new Titulo(meuTituloOmdb);//passando um record para criar um obj titulo
+        System.out.println("Meu titulo ja convertido");
+        System.out.println(meuTitulo);
     }
 }
