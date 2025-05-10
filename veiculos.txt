@@ -1,0 +1,7 @@
+{
+  "modelo": "Fiesta",
+  "marca": "Ford",
+  "cor": "Prata Riveira",
+  "combustivel": "flex",
+  "ano": 2011
+}

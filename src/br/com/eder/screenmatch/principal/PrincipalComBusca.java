@@ -43,18 +43,18 @@ public class PrincipalComBusca {
                         .send(request, HttpResponse.BodyHandlers.ofString());
                 // System.out.println(response.body());
                 String json = response.body();
-                System.out.println(json);
+                System.out.println("Dados da resposta da requisição\n" + json);
 
 
                 //Gson gson = new Gson();
                // Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
                 //Titulo meuTitulo = gson.fromJson(json,Titulo.class);
                 TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);//record
-                System.out.println(meuTituloOmdb);
+                System.out.println("\nDados do objeto meuTituloOmdb convertido de Json para um objeto record na aplicação\n" + meuTituloOmdb);
                 // try {
                 Titulo meuTitulo = new Titulo(meuTituloOmdb);//passando um record para criar um obj titulo
-                System.out.println("Meu titulo ja convertido");
-                System.out.println(meuTitulo);
+                System.out.println("\nMeu titulo ja convertido");
+                System.out.println("\n" + meuTitulo);
                 titulos.add(meuTitulo);//adicionando na lista
 //                System.out.println("Gravando a saida  toString() num arquivo de texto");
 //                FileWriter escrita = new FileWriter("filmes.txt");
